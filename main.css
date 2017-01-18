@@ -1,0 +1,8 @@
+body {
+  font-size:100%;
+  padding: 20px;
+}
+
+body.popup {
+  min-width: 350px;
+}
