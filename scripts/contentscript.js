@@ -29,19 +29,19 @@ if (url && url != "") {
     request.setRequestHeader('Accept', 'application/json');
     request.send("grant_type=client_credentials");
 
-    // request.onreadystatechange = function () {
-    //   if (request.readyState == 4) {
-    //     var token = JSON.parse(request.responseText).access_token;
-    //     var req2 = new XMLHttpRequest();
-    //     req2.open('POST', pia_url + '/api/repos/' + repo + '/items', true);
-    //     req2.setRequestHeader('Accept', '*/*');
-    //     req2.setRequestHeader('Content-Type', 'application/json');
-    //     req2.setRequestHeader('Authorization', 'Bearer ' + token);
-    //     var data = JSON.stringify({url: url,
-    //                                time: Date.now(), 
-    //                                _oydRepoName: 'Webhistory'});
-    //     req2.send(data);
-    //   }
-    // }
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+        var token = JSON.parse(request.responseText).access_token;
+        var req2 = new XMLHttpRequest();
+        req2.open('POST', pia_url + '/api/repos/' + repo + '/items', true);
+        req2.setRequestHeader('Accept', '*/*');
+        req2.setRequestHeader('Content-Type', 'application/json');
+        req2.setRequestHeader('Authorization', 'Bearer ' + token);
+        var data = JSON.stringify({url: url,
+                                   time: Date.now(), 
+                                   _oydRepoName: 'Webhistory'});
+        req2.send(data);
+      }
+    }
   });
 };
