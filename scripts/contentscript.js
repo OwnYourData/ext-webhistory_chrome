@@ -38,7 +38,7 @@ if (url && url != "") {
         req2.setRequestHeader('Content-Type', 'application/json');
         req2.setRequestHeader('Authorization', 'Bearer ' + token);
         var data = JSON.stringify({url: url,
-                                   time: Date.now(), 
+                                   timestamp: Date.now(), 
                                    _oydRepoName: 'Webhistory'});
         req2.send(data);
       }
