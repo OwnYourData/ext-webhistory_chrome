@@ -14,8 +14,7 @@ function loadOptions() {
 function saveOptions() {
   var pia_url = document.getElementById("pia-url").value;
   var app_secret = document.getElementById("app-secret").value;
-  chrome.storage.sync.set({'OYD_pia-url': pia_url, 'OYD_app-secret': app_secret}, function() {
-  });
+  chrome.storage.sync.set({'OYD_pia-url': pia_url, 'OYD_app-secret': app_secret}, function() {});
 }
 
 loadOptions();
